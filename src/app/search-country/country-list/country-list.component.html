@@ -1,0 +1,19 @@
+<section class="cards">
+    <div class="card" *ngFor="let country of countryData">
+        <div class="card-header">
+            <svg width="50" height="50"
+            xmlns="http://www.w3.org/2000/svg">       
+                <image [attr.xlink:href]="country.svg" height="50" width="50"/>
+            </svg>
+        </div>
+        <div class="card-body">
+            <h2 id="countryName">{{ (country.name.length > 38) ? (country.name | slice:0:36)+'..':(country.name) }}</h2>
+        </div>
+        <div class="card-footer">
+            <button class="refresh-button">
+               refresh
+               <img src="../../assets/refresh.png" width="20" height="20">
+            </button>
+        </div>
+    </div>
+</section>
